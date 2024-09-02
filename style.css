@@ -1,0 +1,281 @@
+html{
+    height:100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  position: relative;
+    }
+
+.taskbar {
+  margin-top: 15px;
+  background-color: transparent;
+  display:flex;
+  justify-content: right;
+  padding-right: 15px;
+  position: relative;
+  gap:15px;
+}
+
+.taskbar a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  width: 120px;
+  height: 50px;
+  padding: 10px;
+  border:none;
+  background-color: #070e18;
+  margin-left: 10px;
+  border-radius: 25px;
+  color:rgba(255,255,255,255);
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:700;
+  text-decoration:none;
+    transition: background-color 0.5s ease;
+}
+@media (max-width: 768px) {
+  .taskbar {
+      flex-direction: column; 
+      align-items: flex-end; 
+  }
+
+  .taskbar a {
+      font-size: 1.2rem; 
+      margin-left: 0; 
+      margin-bottom: 10px;
+      height: 25px;
+      width: 60px;
+  }
+
+  .taskbar a:last-child {
+      margin-bottom: 0; 
+  }
+}
+
+@media (max-width: 480px) {
+  .taskbar a {
+      font-size: 1rem; 
+      padding: 8px; 
+  }
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.taskbar a::after{
+    --angle:0deg;
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding:5px;
+    border-radius:25px;
+    animation:3s spin linear infinite;
+}
+.taskbar a::before{
+    filter:blur(1.5rem);
+    opacity:0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+       --angle:360deg; 
+    }
+}
+  .ga::after{ background-image:conic-gradient(from var(--angle),transparent,#09ce16)}
+  .pyq::after{   background-image:conic-gradient(from var(--angle),transparent,#05ebe7)}
+
+.notes::after{  background-image:conic-gradient(from var(--angle),transparent,#f20779)}
+.test::after{   background-image:conic-gradient(from var(--angle),transparent,#2b1cfd)}
+.about::after{   background-image:conic-gradient(from var(--angle),transparent,#ff6c0a)}
+
+.taskbar a:hover{
+    background-color:rgba(255,255,255,0.2);
+}
+.taskbar a:active{
+    background-color:rgba(255,255,255,0.5)
+}
+.panda{
+    scale:35%;
+    position: absolute;
+}
+.ptext{
+    position: absolute;
+    top:-35%;
+    left:45%;
+    transform:translate(-50%,-50%);
+    font-size:500%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:1000;
+    color:rgba(255);
+}
+.bamboo{
+    position: absolute;
+    top:-23%;
+    left:83%;
+    transform:translate(-50%,-50%);
+    width:15%;
+}
+    @media only screen and (max-width: 768px) {
+        .panda {
+           position:absolute;
+            scale:25%;
+            top:60%;
+            left:-70%;
+            margin-top: 100px;
+           
+       
+            
+        }
+
+
+        
+    }
+
+.course,.quiz,.quiz1,.quiz_2,.end_,.GS,.maths1,.stats1,.ct1,.english1,.dec23,.end12024{
+  display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3, 100px);
+  margin-top: 0;
+    grid-column-gap:0;
+    grid-row-gap:8em;
+    padding-left:0px;
+    margin-left: 10% ;
+}
+
+.course a,.quiz a,.quiz1 a,.quiz_2 a,.end_ a,.GS a,.maths1 a,.stats1 a,.ct1 a,.english1 a,.dec23 a,.end12024 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height:160px;
+    background-color: black;
+    color:white;
+    font-size:1.2rem;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border:none;
+    border-radius: 25px;
+    margin-left:0;
+    transition: background-color 0.5s;
+    margin-top: 20px;
+}
+.course a:hover,.quiz a:hover,.quiz1 a:hover,.quiz_2 a:hover,.end_ a:hover,.GS a:hover,.maths1 a:hover,.stats1 a:hover,.ct1 a:hover,.english1 a:hover,.dec23 a:hover,.end12024 a:hover{
+    background-color: #4e4e65;
+}
+.course a:active,.quiz a:active,.quiz1 a:active,.quiz_2 a:active,.end_ a:active,.GS a:active,.maths1 a:active,.stats1 a:acive,.ct1 a:active,.english1 a:active,.dec23 a:active,.end12024 a:active{
+    background-color:#bfabab;
+    color:black;
+}
+@media (max-width: 600px) {
+  .course,.quiz,.quiz1,.quiz_2,.end_,.GS,.maths1,.stats1,.ct1,.english1,.dec23,.end12024 {
+    margin-left: 10%;
+    margin-top: 50px;
+       grid-row-gap:3em;
+      
+  }
+.course a,.quiz a,.quiz1 a,.quiz_2 a,.end_ a, .GS a,.maths1 a,.stats1 a,.ct1 a,.english1 a,.dec23 a,.end12024 a
+    {  
+        width: 80px;
+        height:80px;
+        font-size:.6rem;
+  }
+}
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of other content */
+     /* Initially hidden */
+}
+
+#loading-screen img {
+    width: 100px; /* Adjust size of the GIF */
+    height: auto;
+}
+
+/* Taskbar and other styles */
+.taskbar {
+    margin-top: 15px;
+    background-color: transparent;
+    display: flex;
+    justify-content: right;
+    padding-right: 15px;
+    position: relative;
+    gap: 15px;
+}
+
+/* (Include all other existing styles here) */
+
+/* Ensure content is shown after loading screen */
+body.loaded #loading-screen {
+    display: none; /* Hide loading screen once page is loaded */
+}
+.box {
+    position: relative;
+}
+
+.box p {
+    padding-left: 4px;
+    padding-right: 4px;
+    line-height:1.6;
+    position: relative;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    border-radius: 30px;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: black;
+    
+}
+.box p span{
+    color: yellow;
+}
+.box p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), red, blue, green, yellow, red);
+    animation: spin 3s linear infinite;
+    /* Use opacity instead of z-index */
+    z-index: -1;
+    padding:6px;
+    transform: translate(-2%, -2%);
+    border-radius: 30px;
+    filter: blur(.8rem);
+}
+
+      
+      
+  
+   
+
